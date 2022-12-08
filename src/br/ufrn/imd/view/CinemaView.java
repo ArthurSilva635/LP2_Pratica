@@ -8,9 +8,9 @@ import br.ufrn.imd.model.Cinema;
 
 
 public class CinemaView {
-
+	
 	public static void main(String[] args) {
-		
+		Cinema cinema = new Cinema();
 		//MenuGerenciamento mg = new MenuGerenciamento();
 		//mg.menuGeral();
 		//mg.gerenciarFilmes();
@@ -22,20 +22,21 @@ public class CinemaView {
 		
 		FilmeController ctl = new FilmeController();
 		//ctl.criarFilme();
-		ctl.criarFilme();
-		ctl.lerFilmes();
+		cinema.addFilmes(ctl.criarFilme());
+		ctl.lerFilmes(cinema.getFilmes());
 		//ctl.modificarFilme();
 		
 		SalaController scl = new SalaController();
 		//scl.criarSalas();
-		scl.criarSalas();
-		scl.lerSalas();
+		cinema.addSala(scl.criarSalas());
+		System.out.println(cinema.getSalas().size());
+		scl.lerSalas(cinema.getSalas());
 		//scl.modificarSala();
 	
 		
 		SessaoController sscl = new SessaoController();
-		sscl.criarSessao();
-		//sscl.lerSessoes();
+		cinema.addSessoes(sscl.criarSessao(cinema));
+		sscl.lerSessoes(cinema.getSessoes());
 		
 		//cc.lerFaturamento();
 	

@@ -18,7 +18,7 @@ public class FilmeController {
 	 private int opcaoInt=0;
 	 private int ponteiro=-1;
 	
-	public void criarFilme() {
+	public Filme criarFilme() {
 		
 		 System.out.print("\nDigite o nome do filme: ");
 		 
@@ -73,11 +73,13 @@ public class FilmeController {
 		        }
 		        
 		        Filme filme = new Filme(tituloFilme, tipoProducao, duracao, tipoAudio, permite3D);
-		        cinema.addFilmes(filme);
+		        //cinema.addFilmes(filme);
+		        return filme;
+		      
 	}
 	
-	public void lerFilmes() {
-        ArrayList<Filme> filmes = cinema.getFilmes();
+	public void lerFilmes(ArrayList<Filme> filmes) {
+       // ArrayList<Filme> filmes = cinema.getFilmes();
 
         System.out.println("\n------------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println("|                                                              FILMES DISPONÍVEIS                                                              |");

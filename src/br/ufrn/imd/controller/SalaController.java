@@ -14,7 +14,7 @@ public class SalaController {
 	 private int opcaoInt=0;
 	 private int ponteiro=-1;
 	 
-	public void criarSalas() {
+	public Sala criarSalas() {
 		
         System.out.print("\nDigite o número da sala: ");
         int numSala = 0;
@@ -37,11 +37,12 @@ public class SalaController {
         int capacidade = opcaoInt;
 
         Sala sala = new Sala(numSala, capacidade);
-        cinema.addSala(sala);
+        //cinema.addSala(sala);
+        return sala;
     }
 	
-	 public void lerSalas() {
-	        ArrayList<Sala> salas = cinema.getSalas();
+	 public void lerSalas( ArrayList<Sala> salas) {
+	        //ArrayList<Sala> salas = cinema.getSalas();
 
 	        System.out.println("\n-------------------------------------------");
 	        System.out.println("|               SALAS DISPONÍVEIS         |");

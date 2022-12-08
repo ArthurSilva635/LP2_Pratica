@@ -23,8 +23,9 @@ public class SessaoController {
 	 private DecimalFormat df = new DecimalFormat("0.00");
 	 private DateTimeFormatter formataHora = DateTimeFormatter.ofPattern("HH:mm");
 	 
-	public void criarSessao() {
-
+	public Sessao criarSessao(Cinema cinema) {
+		
+		
 		
 		 if(cinema.getFilmes().size() == 0) {
 	            System.out.println("\n-------------------------------------------------------------------------------");
@@ -37,7 +38,7 @@ public class SessaoController {
 	            fc.criarFilme();
 	            
 	     }
-		 if(cinema.getSalas().size() != 0) {
+		 if(cinema.getSalas().size() == 0) {
 	            System.out.println("\n-------------------------------------------------------------------------------");
 	            System.out.println("|                 -> Você está criando uma nova sessão <-                     |");
 	            System.out.println("|                                                                             |");
@@ -49,7 +50,7 @@ public class SessaoController {
 	          
 	     }
 		
-		 fc.lerFilmes();
+		 fc.lerFilmes(cinema.getFilmes());
 		 Filme filme;
 		 
 		 do{ 
@@ -63,11 +64,11 @@ public class SessaoController {
 	                if(opcaoInt==0) {
 	                    fc.criarFilme();
 	                }
-	                loop = true;
+	                loop = false;
 	            }
 	        } while (loop);
 		 
-		 sc.lerSalas();
+		 //sc.lerSalas();
 		 
 		 System.out.print("\nDigite o número correspondente à sala que ocorrerá a exibição da sessão: ");
 		 opcaoInt = util.leitor(1, cinema.getSalas().size(), 'i');
@@ -211,7 +212,8 @@ public class SessaoController {
         }
 
         Sessao sessao = new Sessao(filme, sala, horarioInicial, horarioFinal, valorIngresso, exibicao3D, tipoAudio);
-        cinema.addSessoes(sessao);
+       // cinema.addSessoes(sessao);
+        return sessao;
 
     }
 	
@@ -226,9 +228,9 @@ public class SessaoController {
 
     }
 	
-	 public void lerSessoes() {
+	 public void lerSessoes(ArrayList<Sessao> sessoes) {
 	        atualizarSessoes();
-	        ArrayList<Sessao> sessoes = cinema.getSessoes();
+	     
 
 	        if(aberto) {
 	            System.out.println("------------------------------------------------------------------------------------------------------------------------------------");

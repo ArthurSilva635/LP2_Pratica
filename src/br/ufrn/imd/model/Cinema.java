@@ -6,12 +6,25 @@ public class Cinema {
 	
     private double faturamentoInteiras, faturamentoInteiras3D, faturamentoMeias, faturamentoMeias3D;
     private int ingressosInteiras, ingressosInteiras3D, ingressosMeias, ingressosMeias3D; 
-    private ArrayList<Sala> salas= new ArrayList<Sala>();
-    private ArrayList<Filme> filmes= new ArrayList<Filme>();
-    private ArrayList<Sessao> sessoes= new ArrayList<Sessao>();
+
+    private ArrayList<Sala> salas;
+    private ArrayList<Filme> filmes;
+    private ArrayList<Sessao> sessoes;
     
     
-	public Cinema(){}
+    public Cinema(){
+        faturamentoInteiras = 0;
+        faturamentoInteiras3D = 0;
+        faturamentoMeias = 0;
+        faturamentoMeias3D = 0;
+        ingressosInteiras = 0;
+        ingressosInteiras3D = 0;
+        ingressosMeias = 0;
+        ingressosMeias3D =  0;
+        salas = new ArrayList<>();
+        filmes = new ArrayList<>();
+        sessoes = new ArrayList<>();
+    }
 	
 	public void fechar(){
 		faturamentoInteiras = 0;

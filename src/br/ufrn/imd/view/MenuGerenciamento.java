@@ -182,7 +182,7 @@ public class MenuGerenciamento {
 	                gerenciarFilmes();
 	            }
 	        } else { //GERENCIAR FILMES - >0 FILMES
-	            fc.lerFilmes();
+	            //fc.lerFilmes();
 	            System.out.println("|                                                                                                                                              |");
 	            System.out.println("| 1 - Criar uma novo filme.                                                                                                                    |");
 	            System.out.println("| 2 - Modificar um filme.                                                                                                                      |");
@@ -232,7 +232,7 @@ public class MenuGerenciamento {
 	                gerenciarSalas();
 	            }
 	        } else { //GERENCIAR SALAS - >0 SALAS
-	            sc.lerSalas();
+	            //sc.lerSalas();
 	            System.out.println("|                                         |");
 	            System.out.println("| 1 - Criar uma nova sala.                |");
 	            System.out.println("| 2 - Modificar uma sala.                 |");
